@@ -113,6 +113,11 @@ on:
     types: [opened, reopened, closed, synchronize]
 ```
 
+Installed using:
+```yaml
+uses: offerzen/github-action-heroku-review-apps@v1
+```
+
 ### Version 2
 Uses labels to manage the review app:
 - When adding a label called `create-review-app`: creates the review app
@@ -124,4 +129,9 @@ Requires the following workflow trigger:
 on:
   pull_request:
     types: [labeled]
+```
+
+Installed using:
+```yaml
+uses: offerzen/github-action-heroku-review-apps@v2
 ```
