@@ -97,3 +97,31 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: <Slack webhook URL>
 ```
+
+## Versions
+
+### Version 1
+Uses Pull Request actions to manage the review app:
+- On PR open or reopen: creates the review app
+- On PR synchronize: updates the review app
+- On PR close: deletes the review app
+
+Requires the following workflow triggers:
+```yaml
+on:
+  pull_request:
+    types: [opened, reopened, closed, synchronize]
+```
+
+### Version 2
+Uses labels to manage the review app:
+- When adding a label called `create-review-app`: creates the review app
+- When adding a label called `update-review-app`: updates the review app
+- When adding a label called `delete-review-app`: deletes the review app
+
+Requires the following workflow trigger:
+```yaml
+on:
+  pull_request:
+    types: [labeled]
+```
