@@ -72,7 +72,7 @@ jobs:
           base-name: <Prefix for review app name>
 
       - name: Remove label
-        uses: fastruby/pr-unlabeler@v1
+        uses: fastruby/pr-unlabeler@v2
         with:
           label-to-remove: ${{ github.event.label.name }}
         env:
